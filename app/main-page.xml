@@ -1,8 +1,18 @@
 <Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
-    <ActionBar title="Trang tin tức mới nhất trong ngày" icon="" />
-    <StackLayout class="p-4">
-        <Label text="Please tap me" class="text-3xl text-center" />
-        <Button text="TAP" tap="{{ onTap }}" class="-primary" />
-        <Label text="{{ message }}" class="text-lg text-center text-gray-400" textWrap="true" />
-    </StackLayout>
+    <ActionBar title="Trang chủ" icon="" />
+    <Page>
+        <StackLayout class="p-4">
+            <!-- <Label text="Please tap me" class="text-3xl text-center" />
+            <Button text="TAP" tap="{{ onTap }}" class="-primary" />
+            <Label text="{{ message }}" class="text-lg text-center text-gray-400" textWrap="true" /> -->
+            <Label text = "Tin tức" class = "text-3xl text-center"/>
+            <Label text = "{{message}}" class = "text-lg text-center text-gray-400" textWrap ="true" />
+            <Label text = "There are some new text to test running time" class = "text-lg text-center"/>
+            <Button text = "Change text"/>
+            <Button text ="I dont know clearly how to code in this framework"/>
+            <ActionBar text = "Here is action bar"/>
+            <Label text="how to create imageview here?"/>
+            <Label text="Im just doing something to test nativescript but i really wanna cry huhuhu"/>
+        </StackLayout>
+    </Page>
 </Page>
