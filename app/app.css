@@ -5,6 +5,33 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "Montserrat-VariableFont_wght";
+  src: url("D:/mobileapp/nativescript/fonts/Montserrat-VariableFont_wght.ttf");
+}
+
 Button.-primary {
   font-size: 18;
+}
+ActionBar {
+  background-color: #014231;
+  color: #fff;
+}
+StackLayout.p-4{
+  padding: 5px;
+}
+GridLayout.item {
+  background-color: antiquewhite;
+  padding: 20;
+  margin: 20px;
+  font-size: 20px;
+  height: auto;
+}
+
+Image.image{
+  width: 80%;
+}
+Button.btn_setting{
+  width: 100px;
+  height: 100px;
 }

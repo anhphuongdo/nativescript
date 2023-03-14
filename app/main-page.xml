@@ -1,18 +1,56 @@
 <Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
-    <ActionBar title="Trang chủ" icon="" />
-    <Page>
-        <StackLayout class="p-4">
-            <!-- <Label text="Please tap me" class="text-3xl text-center" />
-            <Button text="TAP" tap="{{ onTap }}" class="-primary" />
-            <Label text="{{ message }}" class="text-lg text-center text-gray-400" textWrap="true" /> -->
-            <Label text = "Tin tức" class = "text-3xl text-center"/>
-            <Label text = "{{message}}" class = "text-lg text-center text-gray-400" textWrap ="true" />
-            <Label text = "There are some new text to test running time" class = "text-lg text-center"/>
-            <Button text = "Change text"/>
-            <Button text ="I dont know clearly how to code in this framework"/>
-            <ActionBar text = "Here is action bar"/>
-            <Label text="how to create imageview here?"/>
-            <Label text="Im just doing something to test nativescript but i really wanna cry huhuhu"/>
-        </StackLayout>
-    </Page>
+    <Page.actionBar>
+  	    <ActionBar title="{{ app_title }}">
+			<ActionBar.actionItems>
+                <ActionItem tap="newNote" ios.position="right" android.position="actionBar">
+                    <ActionItem.actionView>
+                        <StackLayout orientation="horizontal">
+                            <Button class="btn_setting" text="" backgroundImage ="~/images/ic_settings.png" backgroundSize="cover" backgroundRepeat="no-repeat" tap="{{onTap}}"></Button>
+                        </StackLayout>
+                    </ActionItem.actionView>
+                </ActionItem>
+			</ActionBar.actionItems>
+		</ActionBar>
+	</Page.actionBar>
+    <StackLayout class = "p-4">
+        <Label text="Tin tức" class="text-3xl text-center" />
+        <ScrollView>
+            <StackLayout>
+                <GridLayout class = "item" rows = "auto, auto" columns = "*, *">
+                    <Label text="This is news title" textWrap="true" row="0" col="1" verticalAlignment="center" horizontalAlignment="center"/>
+                    <Image src="~/images/image.png" horizontalAlignment="center" verticalAlignment="center" class="image" row="0" col="0" />
+                </GridLayout>
+                <GridLayout class = "item" rows = "auto, auto" columns = "*, *">
+                    <Label text="This is news title" textWrap="true" row="0" col="1" verticalAlignment="center" horizontalAlignment="center"/>
+                    <Image src="~/images/image.png" horizontalAlignment="center" verticalAlignment="center" class="image" row="0" col="0" />
+                </GridLayout>
+                <GridLayout class = "item" rows = "auto, auto" columns = "*, *">
+                    <Label text="This is news title" textWrap="true" row="0" col="1" verticalAlignment="center" horizontalAlignment="center"/>
+                    <Image src="~/images/image.png" horizontalAlignment="center" verticalAlignment="center" class="image" row="0" col="0" />
+                </GridLayout>
+                <GridLayout class = "item" rows = "auto, auto" columns = "*, *">
+                    <Label text="This is news title" textWrap="true" row="0" col="1" verticalAlignment="center" horizontalAlignment="center"/>
+                    <Image src="~/images/image.png" horizontalAlignment="center" verticalAlignment="center" class="image" row="0" col="0" />
+                </GridLayout>
+                <GridLayout class = "item" rows = "auto, auto" columns = "*, *">
+                    <Label text="This is news title" textWrap="true" row="0" col="1" verticalAlignment="center" horizontalAlignment="center"/>
+                    <Image src="~/images/image.png" horizontalAlignment="center" verticalAlignment="center" class="image" row="0" col="0" />
+                </GridLayout>
+                <GridLayout class = "item" rows = "auto, auto" columns = "*, *">
+                    <Label text="This is news title" textWrap="true" row="0" col="1" verticalAlignment="center" horizontalAlignment="center"/>
+                    <Image src="~/images/image.png" horizontalAlignment="center" verticalAlignment="center" class="image" row="0" col="0" />
+                </GridLayout>
+                <GridLayout class = "item" rows = "auto, auto" columns = "*, *">
+                    <Label text="This is news title" textWrap="true" row="0" col="1" verticalAlignment="center" horizontalAlignment="center"/>
+                    <Image src="~/images/image.png" horizontalAlignment="center" verticalAlignment="center" class="image" row="0" col="0" />
+                </GridLayout>
+            </StackLayout>
+        </ScrollView>        
+    </StackLayout>
+    
+    <!-- <StackLayout class="p-4">
+        <Label text="Please tap me" class="text-3xl text-center" />
+        <Button text="TAP" tap="{{ onTap }}" class="-primary" />
+        <Label text="{{ message }}" class="text-lg text-center text-gray-400" textWrap="true" />
+    </StackLayout> -->
 </Page>
