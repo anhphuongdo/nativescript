@@ -1,15 +1,6 @@
-// function showInfoView(args) {
-//     const button = args.object;
-//     const page = button.page;
-  
-//     // Navigate to the information view
-//     const navigationEntry = {
-//       moduleName: 'information',
-//       context: { title: "Add new photo" }
-//     };
-//     page.frame.navigate(navigationEntry);
-//   }
-//   exports.showInfoView = showInfoView;
+export function onPageLoaded(args){
+  alert("Page loaded")
+}
 
   function addPhoto(args) {
     const button = args.object;

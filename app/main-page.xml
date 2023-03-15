@@ -1,54 +1,30 @@
 
-<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
+<Page class="mainpage" xmlns="http://schemas.nativescript.org/tns.xsd" loaded="pageLoaded">
     <Page.actionBar>
   	    <ActionBar title="{{ app_title }}">
 			<ActionBar.actionItems>
                 <ActionItem tap="newNote" ios.position="right" android.position="actionBar">
                     <ActionItem.actionView>
-                        <StackLayout orientation="horizontal">
-                            <Button class="btn_setting" text="" backgroundImage ="~/images/ic_settings.png" backgroundSize="cover" backgroundRepeat="no-repeat" tap="{{onTap}}"></Button>
-                        </StackLayout>
+                        <Label class="btn_setting" text="" backgroundImage ="~/images/ic_settings.png" backgroundSize="cover" backgroundRepeat="no-repeat" tap="{{onTap}}"></Label>
                     </ActionItem.actionView>
                 </ActionItem>
 			</ActionBar.actionItems>
 		</ActionBar>
 	</Page.actionBar>
-    <StackLayout class = "p-4">
-        <Label text="Tin tức" class="text-3xl text-center" />
-       <Button text="Addff" tap="showInfoView" />
-        <ScrollView>
-            <StackLayout>
-                <GridLayout class = "item" rows = "auto, auto" columns = "*, *">
-                    <Label text="This is news title" textWrap="true" row="0" col="1" verticalAlignment="center" horizontalAlignment="center"/>
-                    <Image src="~/images/image.png" horizontalAlignment="center" verticalAlignment="center" class="image" row="0" col="0" />
-                </GridLayout>
-                <GridLayout class = "item" rows = "auto, auto" columns = "*, *">
-                    <Label text="This is news title" textWrap="true" row="0" col="1" verticalAlignment="center" horizontalAlignment="center"/>
-                    <Image src="~/images/image.png" horizontalAlignment="center" verticalAlignment="center" class="image" row="0" col="0" />
-                </GridLayout>
-                <GridLayout class = "item" rows = "auto, auto" columns = "*, *">
-                    <Label text="This is news title" textWrap="true" row="0" col="1" verticalAlignment="center" horizontalAlignment="center"/>
-                    <Image src="~/images/image.png" horizontalAlignment="center" verticalAlignment="center" class="image" row="0" col="0" />
-                </GridLayout>
-                <GridLayout class = "item" rows = "auto, auto" columns = "*, *">
-                    <Label text="This is news title" textWrap="true" row="0" col="1" verticalAlignment="center" horizontalAlignment="center"/>
-                    <Image src="~/images/image.png" horizontalAlignment="center" verticalAlignment="center" class="image" row="0" col="0" />
-                </GridLayout>
-                <GridLayout class = "item" rows = "auto, auto" columns = "*, *">
-                    <Label text="This is news title" textWrap="true" row="0" col="1" verticalAlignment="center" horizontalAlignment="center"/>
-                    <Image src="~/images/image.png" horizontalAlignment="center" verticalAlignment="center" class="image" row="0" col="0" />
-                </GridLayout>
-                <GridLayout class = "item" rows = "auto, auto" columns = "*, *">
-                    <Label text="This is news title" textWrap="true" row="0" col="1" verticalAlignment="center" horizontalAlignment="center"/>
-                    <Image src="~/images/image.png" horizontalAlignment="center" verticalAlignment="center" class="image" row="0" col="0" />
-                </GridLayout>
-                <GridLayout class = "item" rows = "auto, auto" columns = "*, *">
-                    <Label text="This is news title" textWrap="true" row="0" col="1" verticalAlignment="center" horizontalAlignment="center"/>
-                    <Image src="~/images/image.png" horizontalAlignment="center" verticalAlignment="center" class="image" row="0" col="0" />
-                </GridLayout>
-            </StackLayout>
-        </ScrollView>        
-    </StackLayout>
+    <ScrollView>
+        <StackLayout>
+            <Label text="Tin tức" class="text-3xl text-center" />
+            <Button text="Addff" tap="showInfoView" />
+            <ListView items="{{ photos }}" id="list" itemTap="showInfoView">
+                <ListView.itemTemplate>
+                    <GridLayout class = "item" rows = "auto, auto" columns = "*, *">
+                        <Label text="{{ title_photo }}" textWrap="true" row="0" col="1" verticalAlignment="center" horizontalAlignment="center"/>
+                        <Image src="{{ souce_photo }}" horizontalAlignment="center" verticalAlignment="center" class="image" row="0" col="0" />
+                    </GridLayout>
+                </ListView.itemTemplate>
+            </ListView>
+        </StackLayout>
+    </ScrollView>        
     
     <!-- <StackLayout class="p-4">
         <Label text="Please tap me" class="text-3xl text-center" />
@@ -56,3 +32,5 @@
         <Label text="{{ message }}" class="text-lg text-center text-gray-400" textWrap="true" />
     </StackLayout> -->
 </Page>
+
+

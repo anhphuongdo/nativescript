@@ -1,8 +1,29 @@
-<Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="onPageLoaded">
-  <StackLayout id="info-view" visibility="collapse">
+<Page class = "detailpage" xmlns="http://schemas.nativescript.org/tns.xsd" loaded="onPageLoaded">
+  <Page.actionBar>
+  	  <ActionBar title="{{ app_title }}">
+			<ActionBar.actionItems>
+        <ActionItem tap="newNote" ios.position="right" android.position="actionBar">
+          <ActionItem.actionView>
+            <Label class="btn_setting" text="" backgroundImage ="~/images/ic_settings.png" backgroundSize="cover" backgroundRepeat="no-repeat" tap="{{onTap}}"></Label>
+          </ActionItem.actionView>
+        </ActionItem>
+			</ActionBar.actionItems>
+		</ActionBar>
+	</Page.actionBar>
+    <ScrollView>
+      <StackLayout class="p-4">
+        <Label text = "This is news title" class= "news_detail_title text-3xl text-center" />
+        <StackLayout>
+          <Image src="~/images/_MG_8601.png" class="news_detail_image"/>
+          <Label class="img_describe text-center" text= "This is image's describe"></Label>
+        </StackLayout>
+        <TextView text = "This is news description" class="news_description" textWrap="true"/>
+      </StackLayout>
+    </ScrollView>
+  <!-- <StackLayout id="info-view" visibility="collapse">
     <TextField id="title" hint="Title" />
     <TextField id="image" hint="Image URL" />
     <TextField id="description" hint="Description" />
     <Button text="Submit" tap="addPhoto" />
-  </StackLayout>
+  </StackLayout> -->
 </Page>
