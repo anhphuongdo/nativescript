@@ -1,5 +1,11 @@
-/* var Observable = require("data/observable").Observable;
-var ObservableArray = require("data/observable-array").ObservableArray; */
+
+var ObservableModule = require("tns-core-modules/data/observable")
+var observable = new ObservableModule.Observable();
+
+var observableArrayModule = require("tns-core-modules/data/observable-array");
+var observableArray = new observableArrayModule.ObservableArray([]);
+
+
 
 var photos = 
     [
@@ -113,15 +119,23 @@ var photos =
       }
     ];
 
+/* var listView = frameModule.topmost().currentPage.getViewById("list");
+var photoObservableArray = new observableArray.ObservableArray();
+
+for (var i = 0; i < people.length; i++) {
+  photoObservableArray.push(observable.fromObject(people[i]));
+}
+listView.items = peopleObservableArray; */
+
 
 /* var viewModel = new Observable({
   photos: new ObservableArray(photos)
 }); */
 
-exports.pageLoaded = function(args){
+/* exports.pageLoaded = function(args){
   var page = args.object;
   page.bindingContext = viewModel;
-};
+}; */
 
 export function showInfoView(args) {
   const button = args.object;

@@ -15,7 +15,7 @@
         <StackLayout>
             <Label text="Tin tức" class="text-3xl text-center" />
             <Button text="Addff" tap="showInfoView" />
-            <ListView items="{{ photos }}" id="list" itemTap="showInfoView">
+            <ListView id="list" itemTap="showInfoView">
                 <ListView.itemTemplate>
                     <GridLayout class = "item" rows = "auto, auto" columns = "*, *">
                         <Label text="{{ title_photo }}" textWrap="true" row="0" col="1" verticalAlignment="center" horizontalAlignment="center"/>
