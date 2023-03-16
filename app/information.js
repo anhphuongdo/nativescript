@@ -18,9 +18,9 @@ export function onPageLoaded(args){
     photoData.addPhoto(photo);
   
     // Clear the form fields
-    page.getViewById('title').text = '';
-    page.getViewById('image').text = '';
-    page.getViewById('description').text = '';
+    // page.getViewById('title').text = '';
+    // page.getViewById('image').text = '';
+    // page.getViewById('description').text = '';
   
     // Hide the information view
     const infoView = page.getViewById('info-view');

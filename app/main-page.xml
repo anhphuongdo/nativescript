@@ -14,23 +14,27 @@
     <ScrollView>
         <StackLayout>
             <Label text="Tin tức" class="text-3xl text-center" />
-            <Button text="Addff" tap="showInfoView" />
-            <ListView id="list" itemTap="showInfoView">
+            <Button text="Add" tap="showInfoView" />
+            <ListView id="list"  items="{{ myTitles }}"  loaded="{{ onListViewLoaded }}" > 
                 <ListView.itemTemplate>
-                    <GridLayout class = "item" rows = "auto, auto" columns = "*, *">
-                        <Label text="{{ title_photo }}" textWrap="true" row="0" col="1" verticalAlignment="center" horizontalAlignment="center"/>
-                        <Image src="{{ souce_photo }}" horizontalAlignment="center" verticalAlignment="center" class="image" row="0" col="0" />
-                    </GridLayout>
+                    <!-- <GridLayout class = "item" rows = "auto, auto" columns = "*, *"> -->
+                     <StackLayout class="list-group-item">
+                        <!-- <Image src="{{ souce_photo }}" horizontalAlignment="center" verticalAlignment="center" class="image" row="0" col="0" />
+                     <Label text="{{ title_photo }}" textWrap="true" row="0" col="1" verticalAlignment="center" horizontalAlignment="center"/> -->
+                     <Label text="kiet" textWrap="true" class="title" />
+                        </StackLayout>
+                    <!-- </GridLayout> -->  
                 </ListView.itemTemplate>
             </ListView>
         </StackLayout>
     </ScrollView>        
-    
+   
+</Page>
+
+
+ 
     <!-- <StackLayout class="p-4">
         <Label text="Please tap me" class="text-3xl text-center" />
         <Button text="TAP" tap="{{ onTap }}" class="-primary" />
         <Label text="{{ message }}" class="text-lg text-center text-gray-400" textWrap="true" />
     </StackLayout> -->
-</Page>
-
-
