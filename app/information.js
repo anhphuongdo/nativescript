@@ -1,11 +1,17 @@
+import { Observable } from 'tns-core-modules';
+import { onNavigatingTo } from './main-page';
+
 export function onPageLoaded(args){
+  const page = args.object;
+  const viewModel = new Observable();
+  page.bindingContext = onNavigatingTo();
   alert("Page loaded")
 }
 
-  function addPhoto(args) {
+  /* function addPhoto(args) {
     const button = args.object;
     const page = button.page;
-  
+    
     // Get the values from the form
     const title = page.getViewById('title').text;
     const image = page.getViewById('image').text;
@@ -25,4 +31,4 @@ export function onPageLoaded(args){
     // Hide the information view
     const infoView = page.getViewById('info-view');
     infoView.visibility = 'collapse';
-  }
+  } */

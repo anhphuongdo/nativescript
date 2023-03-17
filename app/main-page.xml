@@ -1,5 +1,5 @@
 
-<Page class="mainpage" xmlns="http://schemas.nativescript.org/tns.xsd" loaded="pageLoaded">
+<Page class="mainpage" xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
     <Page.actionBar>
   	    <ActionBar title="{{ app_title }}">
 			<ActionBar.actionItems>
@@ -15,20 +15,18 @@
         <StackLayout>
             <Label text="Tin tức" class="text-3xl text-center" />
             <Button text="Add" tap="showInfoView" />
-            <ListView id="list"  items="{{ myTitles }}"  loaded="{{ onListViewLoaded }}" > 
+
+            <ListView items="{{ photos }}" itemTap="showInfoView" loaded="{{ onListViewLoaded }}" separatorColor="orangered" rowHeight="auto" class="list-group" id="listView">
                 <ListView.itemTemplate>
-                    <!-- <GridLayout class = "item" rows = "auto, auto" columns = "*, *"> -->
-                     <StackLayout class="list-group-item">
-                        <!-- <Image src="{{ souce_photo }}" horizontalAlignment="center" verticalAlignment="center" class="image" row="0" col="0" />
-                     <Label text="{{ title_photo }}" textWrap="true" row="0" col="1" verticalAlignment="center" horizontalAlignment="center"/> -->
-                     <Label text="kiet" textWrap="true" class="title" />
-                        </StackLayout>
-                    <!-- </GridLayout> -->  
+                <!-- The item template can only have a single root view container (e.g. GriLayout, StackLayout, etc.) -->
+                    <StackLayout orientation="horizontal" class="list-group-item">
+                        <Image src="{{ source_photo || 'Downloading...' }}" class="image" />    
+                        <Label text="{{ title_photo || 'Downloading...' }}" textWrap="true" class="title text-center" />
+                    </StackLayout>
                 </ListView.itemTemplate>
             </ListView>
         </StackLayout>
     </ScrollView>        
-   
 </Page>
 
 
