@@ -10,9 +10,15 @@
 			</ActionBar.actionItems>
 		</ActionBar>
 	</Page.actionBar>
-    <ScrollView>
+    <ScrollView  class = "addform">
       <StackLayout class="p-4">
-        <Label text="Thêm gì thì thêm vô chỗ này nè"/>
+              <Label text="Title:"/>
+              <TextField id="title" hint="Enter title here" />
+              <Label text="Description:"/>
+              <TextField id="description" hint="Enter description here" />
+              <Label text="Image URL:"/>
+              <TextField id="image" hint="Enter image URL here" />
+              <Button text="Add" class="btnadd" tap="addnew" />        
       </StackLayout>
     </ScrollView>
   <!-- <StackLayout id="info-view" visibility="collapse">

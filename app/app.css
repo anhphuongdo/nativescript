@@ -5,7 +5,16 @@
 @tailwind components;
 @tailwind utilities;
 
-
+.addform{
+  background-color: teal;
+}
+.addform button{
+  background-color: rgb(138, 14, 14);
+  border-radius: 50px;
+}
+.btnadd{
+  border: 3px solid rgb(195, 119, 223);
+}
 Button.-primary {
   font-size: 18;
 }
