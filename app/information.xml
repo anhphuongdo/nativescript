@@ -12,12 +12,7 @@
 	</Page.actionBar>
     <ScrollView>
       <StackLayout class="p-4">
-        <Label text = "This is news title" class= "news_detail_title text-3xl text-center" />
-        <StackLayout>
-          <Image src="~/images/_MG_8601.png" class="news_detail_image"/>
-          <Label class="img_describe text-center" text= "This is image's describe"></Label>
-        </StackLayout>
-        <TextView text = "This is news description" class="news_description" textWrap="true"/>
+        <Label text="Thêm gì thì thêm vô chỗ này nè"/>
       </StackLayout>
     </ScrollView>
   <!-- <StackLayout id="info-view" visibility="collapse">
