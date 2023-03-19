@@ -16,7 +16,7 @@
             <Label text="Tin tức" class="text-3xl text-center" />
             <Button text="Add" tap="showInfoView" />
 
-            <ListView items="{{ photos }}" itemTap="showInfoView" loaded="{{ onListViewLoaded }}" separatorColor="orangered" rowHeight="auto" class="list-group" id="listView">
+            <ListView items="{{ myItems }}" itemTap="showInfoView" loaded="{{ onListViewLoaded }}" separatorColor="orangered" rowHeight="auto" class="list-group" id="listView">
                 <ListView.itemTemplate>
                 <!-- The item template can only have a single root view container (e.g. GriLayout, StackLayout, etc.) -->
                     <StackLayout orientation="horizontal" class="list-group-item">

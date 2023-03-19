@@ -1,11 +1,11 @@
-/* import { Observable, fromObject } from "@nativescript/core";
+import { Observable, fromObject } from "@nativescript/core";
 const httpModule = require("@nativescript/core/http");
-import { getJSON } from "@nativescript/core/http";
+
 export function onNavigatingTo(args){  
   const page = args.object;
   let jsonData;
 
-  httpModule.getFile("~/photo.json").then(function (file) {
+  httpModule.getFile("https://raw.githubusercontent.com/anhphuongdo/data/main/photo.json").then(function (file) {
     jsonData = JSON.parse(file.readTextSync());
     var items = [];
 
@@ -30,10 +30,10 @@ export function onNavigatingTo(args){
 
 export function onListViewLoaded(args) {
   const listView = args.object;
-} */
+}
 
 
-import { fromObject } from "@nativescript/core";
+/* import { fromObject } from "@nativescript/core";
 
 export function onNavigatingTo(args) {
   const page = args.object;
@@ -97,12 +97,12 @@ export function onNavigatingTo(args) {
     ]
 });
   page.bindingContext = vm;
-}
+} */
 
 
-export function onListViewLoaded(args) {
+/* export function onListViewLoaded(args) {
   const listView = args.object;
-}
+} */
 
 
 /////////////////////////////////////////////////////////
