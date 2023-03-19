@@ -1,5 +1,4 @@
-
-<Page class="mainpage" xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
     <Page.actionBar>
   	    <ActionBar title="{{ app_title }}">
 			<ActionBar.actionItems>
@@ -16,7 +15,7 @@
             <Label text="Tin tức" class="text-3xl text-center" />
             <Button text="Add" tap="showInfoView" />
 
-            <ListView items="{{ myItems }}" itemTap="showInfoView" loaded="{{ onListViewLoaded }}" separatorColor="orangered" rowHeight="auto" class="list-group" id="listView">
+            <ListView items="{{ myItems }}" itemTap="showDetailView" loaded="{{ onListViewLoaded }}" separatorColor="orangered" rowHeight="auto" class="list-group" id="listView">
                 <ListView.itemTemplate>
                 <!-- The item template can only have a single root view container (e.g. GriLayout, StackLayout, etc.) -->
                     <StackLayout orientation="horizontal" class="list-group-item">
@@ -29,8 +28,6 @@
     </ScrollView>        
 </Page>
 
-
- 
     <!-- <StackLayout class="p-4">
         <Label text="Please tap me" class="text-3xl text-center" />
         <Button text="TAP" tap="{{ onTap }}" class="-primary" />
