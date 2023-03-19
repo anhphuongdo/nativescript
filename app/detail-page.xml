@@ -1,0 +1,35 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingToDetail">
+    <Page.actionBar>
+  	    <ActionBar title="{{ app_title }}">
+			<ActionBar.actionItems>
+                <ActionItem tap="newNote" ios.position="right" android.position="actionBar">
+                    <ActionItem.actionView>
+                        <Label class="btn_setting" text="" backgroundImage ="~/images/ic_settings.png" backgroundSize="cover" backgroundRepeat="no-repeat" tap="{{onTap}}"></Label>
+                    </ActionItem.actionView>
+                </ActionItem>
+			</ActionBar.actionItems>
+		</ActionBar>
+	</Page.actionBar>
+    <ScrollView>
+        <StackLayout>
+            <Label text="Tin tức" class="text-3xl text-center" />
+            <Button text="Add" tap="showInfoView" />
+
+            <ListView items="{{ myItems }}" itemTap="showDetailView" loaded="{{ onListViewLoaded }}" separatorColor="orangered" rowHeight="auto" class="list-group" id="listView">
+                <ListView.itemTemplate>
+                <!-- The item template can only have a single root view container (e.g. GriLayout, StackLayout, etc.) -->
+                    <StackLayout orientation="horizontal" class="list-group-item">
+                        <Image src="{{ source_photo || 'Downloading...' }}" class="image" />    
+                        <Label text="{{ title_photo || 'Downloading...' }}" textWrap="true" class="title text-center" />
+                    </StackLayout>
+                </ListView.itemTemplate>
+            </ListView>
+        </StackLayout>
+    </ScrollView>        
+</Page>
+
+    <!-- <StackLayout class="p-4">
+        <Label text="Please tap me" class="text-3xl text-center" />
+        <Button text="TAP" tap="{{ onTap }}" class="-primary" />
+        <Label text="{{ message }}" class="text-lg text-center text-gray-400" textWrap="true" />
+    </StackLayout> -->

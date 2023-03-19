@@ -28,11 +28,6 @@ export function onNavigatingTo(args){
   });
 }
 
-export function onListViewLoaded(args) {
-  const listView = args.object;
-}
-
-
 export function showInfoView(args) {
   const button = args.object;
   const page = button.page;
@@ -41,6 +36,18 @@ export function showInfoView(args) {
   const navigationEntry = {
     moduleName: 'information',
     context: { title: "Add new photo" }
+  };
+  page.frame.navigate(navigationEntry);
+};
+
+export function showDetailView(args) {
+  const button = args.object;
+  const page = button.page;
+
+  // Navigate to the information view
+  const navigationEntry = {
+    moduleName: 'detail-page',
+    context: { title: "Show detail of news" }
   };
   page.frame.navigate(navigationEntry);
 };
