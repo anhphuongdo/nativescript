@@ -9,13 +9,13 @@
         </ActionItem>
 			</ActionBar.actionItems>
 		</ActionBar>
-	</Page.actionBar>
-    <ScrollView>
+	</Page.actionBar> 
+  <ScrollView>
       <StackLayout class="p-4">
         <Label text="tin tức" class="text-3xl text-center"/>
-        <Label text = "{{ title_photo || 'Downloading...' }}" class= "news_detail_title text-3xl text-center" id="title_photo"/>
-        <Image src="{{ source_photo || 'Downloading...' }}" class="news_detail_image" id="source"/>
-        <TextView text = "{{ description_photo || 'Downloading...' }}" class="news_description" textWrap="true" id="description"/>
+        <Image src="{{ source_photo}}" class="news_detail_image" id="source"/>
+        <TextView text = "{{ title_photo }}" class= "news_detail_title" id="title_photo"/>      
+        <TextView text = "{{ description_photo }}" class="news_description" textWrap="true" id="description"/>
       </StackLayout>
     </ScrollView>
 </Page>

@@ -12,37 +12,9 @@ export function onPageLoaded(args){
 }
 export function onNavigatingTo(args){  
   const page = args.object;
-  // if (args.isBackNavigation) {
-  //   alert("feff");
-  //   page.frame.reload();
-  // }
-    // Check if the page was navigated to from a back action
-    // if (args.isBackNavigation) {
-    //   // Reload the page
-    //   var viewModel = fromObject({
-    //     myItems: getdata()
-    //   })
-    //   page.bindingContext = viewModel;
-    //   //frameModule.topmost().currentPage.reload();
-    // }
-    // else{
-    //   getdatajson(page);
-    //   var viewModel = fromObject({
-    //    myItems: getdata()
-    //  })
-    //  page.bindingContext = viewModel;
-    // }
+ 
     getdatajson(page);
-    //   var viewModel = fromObject({
-    //    myItems: getdata()
-    //  })
-    //  page.bindingContext = viewModel;
-  
-  //  getdatajson(page);
-  //  var viewModel = fromObject({
-  //   myItems: getdata()
-  // })
-  // page.bindingContext = viewModel;
+   
 }
 // exports.navigatedTo = function(args) {
 //   // Add a handler for the page's navigatedTo event

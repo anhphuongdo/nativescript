@@ -1,14 +1,20 @@
 import { Observable, fromObject } from "@nativescript/core";
-import { ObservableArray } from "tns-core-modules";
 const httpModule = require("@nativescript/core/http");
+import { ObservableArray, ChangedData } from "tns-core-modules/data/observable-array";
+
 
 const database = [];
-//var databaset = new ObservableArray();
+var databaset = new ObservableArray();
 export function addtada(item){
-    database.push(item);
+    //database.push(item);
+    databaset.push(item);
 }
 export function getdata(){
-    return database;
+  var a = [];
+  for(i = 0; i < databaset.length; i++){
+      a.push(databaset.getItem(i));
+  }
+    return a;
 }
 export function getsize(){
     return database;
@@ -17,7 +23,7 @@ export function getsize(){
 export function getdatajson(page){
    // const page = args.object;
     let jsonData;
-    httpModule.getFile("https://raw.githubusercontent.com/anhphuongdo/data/main/photo.json").then(function (file) {
+    httpModule.getFile("https://raw.githubusercontent.com/anhphuongdo/nativescript/main/app/news.json").then(function (file) {
     jsonData = JSON.parse(file.readTextSync());
    // var items = [];
 
@@ -25,7 +31,8 @@ export function getdatajson(page){
       // Thêm thông tin của từng `item` vào một đối tượng
       var newItem = {
         title_photo: item.title_photo,
-        source_photo: item.source_photo
+        source_photo: item.source_photo,
+        description_photo: item.description_photo
       }
      
     
@@ -33,13 +40,13 @@ export function getdatajson(page){
       addtada(newItem);
       });
       
-      var newItem1 = {
-        title_photo: "iêttjet",
-        source_photo: "https://upload.wikimedia.org/wikipedia/commons/c/c3/Yen_Bai_-_dogs_-_P1390010.JPG"
-      }
-      addtada(newItem1)
+      // var newItem1 = {
+      //   title_photo: "iêttjet",
+      //   source_photo: "https://upload.wikimedia.org/wikipedia/commons/c/c3/Yen_Bai_-_dogs_-_P1390010.JPG"
+      // }
+     // addtada(newItem1)
       //alert(getsize());
-
+     // var databaset;
     var viewModel = fromObject({
       myItems: getdata()
     })
@@ -52,9 +59,9 @@ export function getdatajson(page){
     console.log(err);
   });
 }
-export function loaddata(page){
-       var viewModel = fromObject({
-      myItems: getdata()
-    })
-    page.bindingContext = viewModel;
-}
+// export function loaddata(page){
+//        var viewModel = fromObject({
+//       myItems: getdata()
+//     })
+//     page.bindingContext = viewModel;
+// }

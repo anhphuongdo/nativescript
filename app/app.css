@@ -6,7 +6,7 @@
 @tailwind utilities;
 
 .addform{
-  background-color: teal;
+  background-color: antiquewhite;
 }
 .addform button{
   background-color: rgb(138, 14, 14);
@@ -23,9 +23,9 @@ ActionBar {
   color: #fff;
 }
 
-StackLayout.p-4{
-  padding: 5px;
-}
+  /* StackLayout.p-4{
+    padding: 5px;
+  } */
 .btn_setting{
   width: 100px;
   height: 100px;
@@ -40,12 +40,14 @@ GridLayout.item {
 }
 
 .image{
-  width: 500px;
-  height: 500px;
+  width: 400px;
+  height: 400px;
 }
 
-Label.news_detail_title{
+TextView.news_detail_title{
   font-weight: bold;
+  color: yellow;
+  font-size: 30px;
 } 
 TextView.news_description{
   font-size: 20px;
@@ -56,6 +58,10 @@ Label.img_describe{
 
 label.title{
   font-size: 20px;
+  color: black;
+}
+Button.btn_add{
+  background-color: black;
 }
 .list-group-item{
   height: 300px;
@@ -68,3 +74,4 @@ label.title{
   padding: 20;
   margin: 20px;
  }
+ 
