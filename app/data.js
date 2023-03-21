@@ -12,12 +12,12 @@ export function getdata(){
 }
 export function getsize(){
     return database;
-    
+
 }
 export function getdatajson(page){
    // const page = args.object;
     let jsonData;
-    httpModule.getFile("https://raw.githubusercontent.com/anhphuongdo/data/main/photo.json").then(function (file) {
+    httpModule.getFile("https://raw.githubusercontent.com/anhphuongdo/nativescript/main/app/news.json").then(function (file) {
     jsonData = JSON.parse(file.readTextSync());
    // var items = [];
 
@@ -25,7 +25,8 @@ export function getdatajson(page){
       // Thêm thông tin của từng `item` vào một đối tượng
       var newItem = {
         title_photo: item.title_photo,
-        source_photo: item.source_photo
+        source_photo: item.source_photo,
+        description_photo: item.description_photo
       }
      
     

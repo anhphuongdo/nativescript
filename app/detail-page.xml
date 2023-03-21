@@ -1,21 +1,19 @@
 <Page class = "detail_page" xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingToDetail">
-  <Page.actionBar>
-  	  <ActionBar title="{{ title_photo }}">
-			<ActionBar.actionItems>
-        <ActionItem tap="settings" ios.position="right" android.position="actionBar">
-          <ActionItem.actionView>
-            <Label class="btn_setting" text="" backgroundImage ="~/images/ic_settings.png" backgroundSize="cover" backgroundRepeat="no-repeat" tap="{{onTap}}"></Label>
-          </ActionItem.actionView>
-        </ActionItem>
-			</ActionBar.actionItems>
-		</ActionBar>
+` <Page.actionBar>
+    <ActionBar.actionItems>
+      <ActionItem tap="settings" ios.position="right" android.position="actionBar">
+        <ActionItem.actionView>
+          <Label class="btn_setting" text="" backgroundImage ="~/images/ic_settings.png" backgroundSize="cover" backgroundRepeat="no-repeat" tap="{{onTap}}"></Label>
+        </ActionItem.actionView>
+      </ActionItem>
+    </ActionBar.actionItems>
 	</Page.actionBar>
+
     <ScrollView>
       <StackLayout class="p-4">
-        <Label text="tin tức" class="text-3xl text-center"/>
-        <Label text = "{{ title_photo || 'Downloading...' }}" class= "news_detail_title text-3xl text-center" id="title_photo"/>
-        <Image src="{{ source_photo || 'Downloading...' }}" class="news_detail_image" id="source"/>
-        <TextView text = "{{ description_photo || 'Downloading...' }}" class="news_description" textWrap="true" id="description"/>
+        <Label class= "news_detail_title text-center" id="title" textWrap="true"/>
+        <Image class="news_detail_image" id="source"/>
+        <Label class="news_description" id="description" textWrap="true"/>
       </StackLayout>
     </ScrollView>
 </Page>

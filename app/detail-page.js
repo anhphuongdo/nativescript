@@ -1,19 +1,17 @@
-import { showDetailView} from "./main-page";
-
 export function onNavigatingToDetail(args){
     const page = args.object;
     const context = page.navigationContext;
-    if(context){
+    if(context){        
         const title_photo = context.title_photo;
-        const title = findViewById("title");
+        const title = page.getViewById("title");
         title.text = title_photo;
 
         const source_photo = context.source_photo;
-        const source = findViewById("source");
+        const source = page.getViewById("source");
         source.src = source_photo;
 
         const description_photo = context.description_photo;
-        const description = findViewById("description");
+        const description = page.getViewById("description");
         description.text = description_photo;
     }
 }
