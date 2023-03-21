@@ -76,9 +76,9 @@ label.title{
 Button.btn_add{
   background-color: black;
 }
-.list-group-item{
+/* .list-group-item{
   height: fit-content;
-}
+} */
 
 .list-group{
   width: 100%;

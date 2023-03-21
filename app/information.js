@@ -1,7 +1,7 @@
 import { Observable } from 'tns-core-modules';
 import { onNavigatingTo } from './main-page';
 const httpModule = require("@nativescript/core/http");
-import { addtada, getdata, getdatajson, getsize } from './data.js';
+import { adddatafirst, addtada, getdata, getdatajson, getsize } from './data.js';
 export function onPageLoaded(args){
   const page = args.object;
  // const viewModel = new Observable();
@@ -13,12 +13,17 @@ export function addnew(args){
    const page = button.page;
    const title = page.getViewById('title').text;
    const image = page.getViewById('image').text;
+  //  const text = "http://lsx.vn/wp-content/uploads/2022/08/Vi-pham-ban-quyen-game.jpg"
+  //  console.log(image);
+  //  console.log(text);
    const description = page.getViewById('description').text;
-   var newItem1 = {
-    title_photo: "iêttjet",
-    source_photo: "https://upload.wikimedia.org/wikipedia/commons/c/c3/Yen_Bai_-_dogs_-_P1390010.JPG"
+   var newItem = {
+    title_photo: title,
+    source_photo:"http://lsx.vn/wp-content/uploads/2022/08/Vi-pham-ban-quyen-game.jpg",
+    description_photo: description
   }
-  addtada(newItem1)
+  console.dir(newItem);
+  adddatafirst(newItem)
     //console.dir(newNews);
     // getdata.array.forEach(element => {
     //   console.dir(element);
