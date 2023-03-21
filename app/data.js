@@ -12,6 +12,7 @@ export function getdata(){
 }
 export function getsize(){
     return database;
+    
 }
 export function getdatajson(page){
    // const page = args.object;
