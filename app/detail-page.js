@@ -1,6 +1,19 @@
-import { onNavigatingTo} from "./main-page";
+import { showDetailView} from "./main-page";
 
 export function onNavigatingToDetail(args){
     const page = args.object;
-    page.bindingContext = onNavigatingTo(args);
+    const context = page.navigationContext;
+    if(context){
+        const title_photo = context.title_photo;
+        const title = findViewById("title");
+        title.text = title_photo;
+
+        const source_photo = context.source_photo;
+        const source = findViewById("source");
+        source.src = source_photo;
+
+        const description_photo = context.description_photo;
+        const description = findViewById("description");
+        description.text = description_photo;
+    }
 }

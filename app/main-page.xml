@@ -2,7 +2,7 @@
     <Page.actionBar>
   	    <ActionBar title="{{ app_title }}">
 			<ActionBar.actionItems>
-                <ActionItem tap="newNote" ios.position="right" android.position="actionBar">
+                <ActionItem tap="settings" ios.position="right" android.position="actionBar">
                     <ActionItem.actionView>
                         <Label class="btn_setting" text="" backgroundImage ="~/images/ic_settings.png" backgroundSize="cover" backgroundRepeat="no-repeat" tap="{{onTap}}"></Label>
                     </ActionItem.actionView>
@@ -15,7 +15,7 @@
             <Label text="Tin tức" class="text-3xl text-center" />
             <Button text="Add" tap="showInfoView" />
 
-            <ListView items="{{ myItems }}" itemTap="showDetailView" loaded="{{ onListViewLoaded }}" separatorColor="orangered" rowHeight="auto" class="list-group" id="listView">
+            <ListView items="{{ myItems }}" itemTap="showDetailView" separatorColor="orangered" rowHeight="auto" class="list-group" id="listView">
                 <ListView.itemTemplate>
                 <!-- The item template can only have a single root view container (e.g. GriLayout, StackLayout, etc.) -->
                     <StackLayout orientation="horizontal" class="list-group-item">

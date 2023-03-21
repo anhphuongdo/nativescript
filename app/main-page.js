@@ -61,14 +61,19 @@ export function showInfoView(args) {
   page.frame.navigate(navigationEntry);
 };
 
-export function showDetailView(args) {
-  const button = args.object;
-  const page = button.page;
 
-  // Navigate to the information view
-  const navigationEntry = {
-    moduleName: 'detail-page',
-    context: { title: "Show detail of news" }
-  };
-  page.frame.navigate(navigationEntry);
+const frameModule = require("@nativescript/core/ui/frame");
+export function showDetailView(args) {
+  if(args.view){
+    const selectedItem = args.view.bindingContext;
+    const navigationEntry = {
+    moduleName: "detail-page",
+    context: {
+      title_photo: selectedItem.title_photo,
+      source_photo: selectedItem.source_photo,
+      description_photo: selectedItem.description_photo
+    }
+    };
+    frameModule.Frame.topmost().navigate(navigationEntry);
+  }
 };
