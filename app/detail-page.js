@@ -1,5 +1,3 @@
-import { showDetailView} from "./main-page";
-
 export function onNavigatingToDetail(args){
     const page = args.object;
      const context = page.navigationContext;
