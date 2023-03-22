@@ -7,22 +7,8 @@ const dem = 0;
 export function onNavigatingTo(args){  
   const page = args.object;
  
-  //  alert(dem);
-  //  if(dem == 0){
-  //   getdatajson(page);
-  //   dem++;
-  //  }
-  //  else{
-  //   loaddata(page);
-  //  }
-   // getdatajson(page);
    getdatajson(page);
 }
-// exports.navigatedTo = function(args) {
-//   // Add a handler for the page's navigatedTo event
-//   const page = args.object;
-  
-// };
 export function showInfoView(args) {
   const button = args.object;
   const page = button.page;
