@@ -51,3 +51,11 @@ export function showDetailView(args) {
   };
   frameModule.Frame.topmost().navigate(navigationEntry);
 };
+
+export function showSettingView(args) {
+  const navigationEntry = {
+  moduleName: "setting-page",
+  context: {title: "Setting Page"}
+  };
+  frameModule.Frame.topmost().navigate(navigationEntry);
+};

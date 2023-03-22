@@ -2,9 +2,9 @@
     <Page.actionBar>
   	    <ActionBar title="{{ app_title }}">
 			<ActionBar.actionItems>
-                <ActionItem tap="settings" ios.position="right" android.position="actionBar">
+                <ActionItem tap="showSettingView" ios.position="right" android.position="actionBar">
                     <ActionItem.actionView>
-                        <Label class="btn_setting" text="" backgroundImage ="~/images/ic_settings.png" backgroundSize="cover" backgroundRepeat="no-repeat" tap="{{onTap}}"></Label>
+                        <Label class="btn_setting" text="" backgroundImage ="~/images/ic_settings.png" backgroundSize="cover" backgroundRepeat="no-repeat" tap="showSettingView"></Label>
                     </ActionItem.actionView>
                 </ActionItem>
 			</ActionBar.actionItems>

@@ -6,4 +6,4 @@ class Photo {
       this.description = description;
     }
   }
- 
+  
