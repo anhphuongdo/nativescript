@@ -29,11 +29,20 @@ export function showDetailView(args) {
   const navigationEntry = {
   moduleName: "detail-page",
   context: {
+    id:selectedItem.id,
     title_photo: selectedItem.title_photo,
     source_photo: selectedItem.source_photo,
     description_photo: selectedItem.description_photo,
    // currentData : currentData
   }
+  };
+  frameModule.Frame.topmost().navigate(navigationEntry);
+};
+
+export function showSettingView(args) {
+  const navigationEntry = {
+  moduleName: "setting-page",
+  context: {title: "Setting Page"}
   };
   frameModule.Frame.topmost().navigate(navigationEntry);
 };

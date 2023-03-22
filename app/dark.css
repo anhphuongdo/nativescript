@@ -14,6 +14,10 @@ Label{
   padding-bottom: 30px;
 }
 
+Page{
+    background-color: black;
+}
+
 .addform{
   background-color: antiquewhite;
 }
@@ -91,9 +95,4 @@ Button.btn_add{
   color: #fff;
   height: 100px;
 }
-Button.btndelete{
-  background-color: rgb(138, 14, 14);
-}
-Button.btnedit{
-  background-color: yellowgreen;
-}
+ 

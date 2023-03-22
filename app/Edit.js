@@ -1,0 +1,5 @@
+
+
+export function Editview(){
+    
+}
