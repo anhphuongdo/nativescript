@@ -16,42 +16,32 @@ export function onNavigatingToSetting(args){
         mySwitch.checked = false;
     }
     page.bindingContext = newItem1;
-/*     const vm = fromObject({
-        items: [
-            { id: 1, name: "Ter Stegen", role: "Goalkeeper" },
-            { id: 3, name: "Piqué", role: "Defender" },
-            { id: 4, name: "I. Rakitic", role: "Midfielder" }
-        ],
-        index: 2,
-        selectedItem: ""
-    });
-    page.bindingContext = vm; */
-    //const isDarkMode = applicationSettings.getBoolean("isDarkMode", false);
-
   }
-
-/*   export function onListPickerLoaded(args) {
-    const listPicker = args.object;
-    listPicker.on("selectedIndexChange", (lpargs) => {
-        const picker = lpargs.object;
-        console.log(`ListPicker selected value: ${picker.selectedValue} ListPicker selected index: ${picker.selectedIndex}`);
+       
+const application = require("@nativescript/core/application");
+const applicationSettings = require("@nativescript/core/application-settings");
+export function onSwitchChange(args){
+    const page = args.object;
+    const rootView = application.getRootView();
+    const mySwitch = page.getViewById("darkModeSwitch");
+    const isDarkMode = applicationSettings.getBoolean("isDarkMode", false);
+    mySwitch.on("checkedChange", (args) => {
+        var isChecked = args.object.checked;
+        if(isChecked){
+            application.systemAppearanceChanged(rootView,"dark");
+            applicationSettings.setBoolean("isDarkMode", true);
+        }else{
+            application.systemAppearanceChanged(rootView,"light");
+            applicationSettings.setBoolean("isDarkMode", false);
+        }
     });
+
 }
-  
-  function changeBackground(newBgColor) {
-    const page = frame.Frame.topmost().currentPage;
-    page.backgroundSpanUnderStatusBar = true;
-    page.background = new Color(newBgColor);
-  } */
-  
-
-
-     
 
     /* applicationSettings.setBoolean("isDarkMode", true); */
 
 
-const application = require("@nativescript/core/application");
+/* const application = require("@nativescript/core/application");
 const applicationSettings = require("@nativescript/core/application-settings");
 
 export function onSwitchChange(args){
@@ -67,6 +57,6 @@ export function onSwitchChange(args){
                 application.setCssFileName("./app.css");
             }
     });
-}
+} */
 
 

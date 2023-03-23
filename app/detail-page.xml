@@ -4,7 +4,7 @@
 			<ActionBar.actionItems>
         <ActionItem tap="settings" ios.position="right" android.position="actionBar">
           <ActionItem.actionView>
-            <Label class="btn_setting" text="" backgroundImage ="~/images/ic_settings.png" backgroundSize="cover" backgroundRepeat="no-repeat" tap="{{onTap}}"></Label>
+            <Label class="btn_setting" text="" backgroundImage ="~/images/ic_settings.png" backgroundSize="cover" backgroundRepeat="no-repeat" tap="showSettingView"></Label>
           </ActionItem.actionView>
         </ActionItem>
 			</ActionBar.actionItems>
@@ -20,7 +20,5 @@
         <Button text="Delete" class="btndelete" tap="DeleteF" /> 
           
       </StackLayout>
-      
-
     </ScrollView>
 </Page>
