@@ -20,18 +20,45 @@ export function addtada(item){
     //database.push(item);
     databaset.push(item);
 }
-export function deleteitem(value){
+export function edititem(id,edit_title, edit_source, edit_des){
+  // const item = databaset.getItem(id + 1 - getsize());
+  //   item.title_photo = edit_title;
+  //   item.source_photo = edit_source;
+  //   item.description_photo = edit_des;
+    // databaset.setItem(id + 1 - getsize(),item);
+    console.log(id);
+    for(i = 0; i < databaset.length; i++){
+      if(databaset.getItem(i).id == id){
+        const item = databaset.getItem(i);
+        item.title_photo = edit_title;
+        item.source_photo = edit_source;
+        item.description_photo = edit_des;
+        databaset.setItem(i,item);
+        break;
+      }
+     
+    }
+
+}
+
+export function deleteitem(id){
  //databaset.filter(item => item.title_photo !== value);
-  databaset.splice(value + 1 - getsize(),1);
+ for(i = 0; i < databaset.length; i++){
+  if(databaset.getItem(i).id == id){
+    databaset.splice(i,1);
+    break;
+  }
+ }
+  
 }
 export function adddatafirst(item){
   databaset.unshift(item)
 }
-export function getdata(){
+export function getdata(arr){
   var a = [];
-  for(i = 0; i < databaset.length; i++){
+  for(i = 0; i < arr.length; i++){
 
-      a.push(databaset.getItem(i));
+      a.push(arr.getItem(i));
 
   }
     return a;
@@ -42,10 +69,12 @@ export function getsize(){
 }
 
 export function getdatajson(page){
+  var tintuc = new ObservableArray(databaset.slice());
+  tintuc.reverse();
     console.log(databaset.getItem(0));
     var viewModel = fromObject({
-      myItems: getdata()
+      myItems: getdata(tintuc)
     })
-    page.bindingContext = viewModel;
+    page.bindingContext = viewModel;  
 
 }

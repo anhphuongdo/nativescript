@@ -17,12 +17,12 @@ export function addnew(args){
    const kiet = getString(image,"");
    var newItem = {
     id: getsize() + 1,
-    title_photo: "http://lsx.vn/wp-content/uploads/2022/08/Vi-pham-ban-quyen-game.jpg",
-    source_photo:"http://lsx.vn/wp-content/uploads/2022/08/Vi-pham-ban-quyen-game.jpg",
+    title_photo: title,
+    source_photo:image,
     description_photo: description
   }
   console.dir(newItem);
-  adddatafirst(newItem)
+  addtada(newItem)
     alert("Add successfully!")
 } 
 

@@ -16,8 +16,9 @@
         <Image src="{{ source_photo}}" class="news_detail_image" id="source"/>
         <TextView text = "{{ title_photo }}" class= "news_detail_title" id="title_photo"/>      
         <TextView text = "{{ description_photo }}" class="news_description" textWrap="true" id="description"/>
-        <Button text="Add" class="btndelete" tap="DeleteF" /> 
-        <Button text="Edit" class="btnedit" tap="onNavigatingToEdit" />        
+        <Button text="Edit" class="btnedit" tap="showEditView" />      
+        <Button text="Delete" class="btndelete" tap="DeleteF" /> 
+          
       </StackLayout>
       
 

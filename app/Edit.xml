@@ -1,24 +1,24 @@
-<Page class = "info_page" xmlns="http://schemas.nativescript.org/tns.xsd" >
+<Page class = "edit_page" xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="Editview" >
     <Page.actionBar>
           <ActionBar title="{{ app_title }}">
               <ActionBar.actionItems>
           <ActionItem tap="newNote" ios.position="right" android.position="actionBar">
             <ActionItem.actionView>
-              <Label class="btn_setting" text="" backgroundImage ="~/images/ic_settings.png" backgroundSize="cover" backgroundRepeat="no-repeat" tap="{{onTap}}"></Label>
+              <Label class="btn_setting" text="" backgroundImage ="~/images/ic_settings.png" backgroundSize="cover" backgroundRepeat="no-repeat"></Label>
             </ActionItem.actionView>
           </ActionItem>
               </ActionBar.actionItems>
           </ActionBar>
       </Page.actionBar>
-      <ScrollView  class = "addform">
+      <ScrollView  class = "editform">
         <StackLayout class="p-4">
                 <Label text="Title:" style = "color:black;"/>
-                <TextField id="title" hint="Enter title here" style = "color:black;"/>
+                <TextField id="titleEdit" hint="Enter title here" style = "color:black;"/>
                 <Label text="Description:" style = "color:black;"/>
-                <TextField id="description" hint="Enter description here" />
+                <TextField id="descriptionEdit" hint="Enter description here" />
                 <Label text="Image URL:" style = "color:black;"/>
-                <TextField id="image" hint="Enter image URL here" />
-                <Button text="Edit" class="btnadd" tap="addnew" />        
+                <TextField id="imageEdit" hint="Enter image URL here" />
+                <Button text="Edit" class="btnadd" tap="Editbtn" />        
         </StackLayout>
       </ScrollView>
     <!-- <StackLayout id="info-view" visibility="collapse">
