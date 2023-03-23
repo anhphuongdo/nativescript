@@ -1,5 +1,5 @@
 import { edititem } from "./data";
-
+import {showInfoView} from './main-page';
 
 export function Editview(args){
     const page = args.object;
@@ -18,6 +18,17 @@ const title = page.getViewById('titleEdit');
    description.text = context.description_photo;
    image.text = context.source_photo;
 }
+export function showMainView(args) {
+    const button = args.object;
+    const page = button.page;
+  
+    const navigationEntry = {
+      moduleName: 'main-page',
+      context: { title: "Add new photo" }
+    };
+    page.frame.navigate(navigationEntry);
+  };
+  
 export function Editbtn(args){
     const button = args.object;
     const page = button.page;
@@ -26,6 +37,9 @@ export function Editbtn(args){
     let image = page.getViewById('imageEdit').text;
    const description = page.getViewById('descriptionEdit').text;
     edititem(context.id, title,image,description);
+    showMainView(args);
     alert("edit successfully");
+    
+
     
 }

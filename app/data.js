@@ -1,5 +1,6 @@
 import { fromObject } from "@nativescript/core";
 import { ObservableArray } from "tns-core-modules/data/observable-array";
+import {showInfoView} from './main-page';
 
 var databaset = new ObservableArray();
 let jsonData;

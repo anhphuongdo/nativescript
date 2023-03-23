@@ -1,5 +1,6 @@
 const applicationSettings = require("@nativescript/core/application-settings");
 const application = require("@nativescript/core/application");
+
 import {getdatajson} from './data.js';
 
 export function onNavigatingTo(args){  

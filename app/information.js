@@ -1,5 +1,6 @@
 import { onNavigatingTo } from './main-page';
 import { addtada, getsize } from './data.js';
+import { showMainView } from './Edit.js';
 export function onPageLoaded(args){
   const page = args.object;
   page.bindingContext = onNavigatingTo();
@@ -19,7 +20,9 @@ export function addnew(args){
   }
   console.dir(newItem);
   addtada(newItem) 
+  showMainView(args);
     alert("Add successfully!")
+
 } 
 
   

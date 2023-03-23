@@ -1,4 +1,5 @@
 import { deleteitem } from './data.js';
+import { showMainView } from './Edit.js';
 export function onNavigatingToDetail(args){
     const page = args.object;
      const context = page.navigationContext;
@@ -16,6 +17,7 @@ export function DeleteF(args) {
   const selectedItem = page.bindingContext;
 
   deleteitem(selectedItem.id);
+  showMainView(args);
   alert("delete successfully");
 };
 const frameModule = require("@nativescript/core/ui/frame");
