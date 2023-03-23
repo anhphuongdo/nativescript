@@ -1,24 +1,16 @@
 <Page class = "edit_page" xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="Editview" >
     <Page.actionBar>
-          <ActionBar title="{{ app_title }}">
-              <ActionBar.actionItems>
-          <ActionItem tap="newNote" ios.position="right" android.position="actionBar">
-            <ActionItem.actionView>
-              <Label class="btn_setting" text="" backgroundImage ="~/images/ic_settings.png" backgroundSize="cover" backgroundRepeat="no-repeat"></Label>
-            </ActionItem.actionView>
-          </ActionItem>
-              </ActionBar.actionItems>
-          </ActionBar>
+          <ActionBar title="{{ app_title }}"></ActionBar>
       </Page.actionBar>
       <ScrollView  class = "editform">
         <StackLayout class="p-4">
-                <Label text="Title:" style = "color:black;"/>
-                <TextField id="titleEdit" hint="Enter title here" style = "color:black;"/>
-                <Label text="Description:" style = "color:black;"/>
-                <TextField id="descriptionEdit" hint="Enter description here" />
-                <Label text="Image URL:" style = "color:black;"/>
-                <TextField id="imageEdit" hint="Enter image URL here" />
-                <Button text="Edit" class="btnadd" tap="Editbtn" />        
+                <Label text="Title:"/>
+                <TextField id="titleEdit" hint="Enter title here" textWrap="true"/>
+                <Label text="Description:" />
+                <TextField id="descriptionEdit" hint="Enter description here" textWrap="true"/>
+                <Label text="Image URL:" />
+                <TextField id="imageEdit" hint="Enter image URL here" textWrap="true"/>
+                <Button text="Edit" class="edit_btn" tap="Editbtn" />        
         </StackLayout>
       </ScrollView>
     <!-- <StackLayout id="info-view" visibility="collapse">

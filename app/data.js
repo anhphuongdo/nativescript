@@ -1,9 +1,6 @@
-import { Observable, fromObject } from "@nativescript/core";
-const httpModule = require("@nativescript/core/http");
-import { ObservableArray, ChangedData } from "tns-core-modules/data/observable-array";
+import { fromObject } from "@nativescript/core";
+import { ObservableArray } from "tns-core-modules/data/observable-array";
 
-
-const database = [];
 var databaset = new ObservableArray();
 let jsonData;
      jsonData = require('./news.json');
@@ -14,18 +11,12 @@ let jsonData;
         source_photo: item.source_photo,
         description_photo: item.description_photo
       }
-      addtada(newItem);
+      addtada(newItem);      
       });
 export function addtada(item){
-    //database.push(item);
     databaset.push(item);
 }
 export function edititem(id,edit_title, edit_source, edit_des){
-  // const item = databaset.getItem(id + 1 - getsize());
-  //   item.title_photo = edit_title;
-  //   item.source_photo = edit_source;
-  //   item.description_photo = edit_des;
-    // databaset.setItem(id + 1 - getsize(),item);
     console.log(id);
     for(i = 0; i < databaset.length; i++){
       if(databaset.getItem(i).id == id){
@@ -42,7 +33,6 @@ export function edititem(id,edit_title, edit_source, edit_des){
 }
 
 export function deleteitem(id){
- //databaset.filter(item => item.title_photo !== value);
  for(i = 0; i < databaset.length; i++){
   if(databaset.getItem(i).id == id){
     databaset.splice(i,1);
@@ -69,6 +59,8 @@ export function getsize(){
 }
 
 export function getdatajson(page){
+/*   const myArrayString = applicationSettings.getString("myArray");
+  const myArrayFromSettings = new ObservableArray(JSON.parse(myArrayString)); */
   var tintuc = new ObservableArray(databaset.slice());
   tintuc.reverse();
     console.log(databaset.getItem(0));

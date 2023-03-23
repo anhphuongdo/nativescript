@@ -1,6 +1,3 @@
-import { Color, getViewById } from "@nativescript/core";
-import { fromObject } from "@nativescript/core";
-
 export function onNavigatingToSetting(args){
     const page = args.object;
     const context = page.navigationContext;
@@ -37,26 +34,5 @@ export function onSwitchChange(args){
     });
 
 }
-
-    /* applicationSettings.setBoolean("isDarkMode", true); */
-
-
-/* const application = require("@nativescript/core/application");
-const applicationSettings = require("@nativescript/core/application-settings");
-
-export function onSwitchChange(args){
-    const page = args.object;
-    const mySwitch = page.getViewById("darkModeSwitch");
-        mySwitch.on("checkedChange", (args) => {
-            var isChecked = args.object.checked;
-            if (isChecked) {
-                applicationSettings.setBoolean("isDarkMode", true);
-                application.setCssFileName("./dark.css");
-            } else {
-                applicationSettings.setBoolean("isDarkMode", false);
-                application.setCssFileName("./app.css");
-            }
-    });
-} */
 
 

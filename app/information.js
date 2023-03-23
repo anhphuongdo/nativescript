@@ -1,8 +1,5 @@
-import { Observable } from 'tns-core-modules';
 import { onNavigatingTo } from './main-page';
-const httpModule = require("@nativescript/core/http");
-import { adddatafirst, addtada, getdata, getdatajson, getsize } from './data.js';
-import { getString } from '@nativescript/core/application-settings';
+import { addtada, getsize } from './data.js';
 export function onPageLoaded(args){
   const page = args.object;
   page.bindingContext = onNavigatingTo();
@@ -14,7 +11,6 @@ export function addnew(args){
    const title = page.getViewById('title').text;
    let image = page.getViewById('image').text;
    const description = page.getViewById('description').text;
-   const kiet = getString(image,"");
    var newItem = {
     id: getsize() + 1,
     title_photo: title,
@@ -22,7 +18,7 @@ export function addnew(args){
     description_photo: description
   }
   console.dir(newItem);
-  addtada(newItem)
+  addtada(newItem) 
     alert("Add successfully!")
 } 
 

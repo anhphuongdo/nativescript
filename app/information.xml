@@ -1,14 +1,6 @@
 <Page class = "info_page" xmlns="http://schemas.nativescript.org/tns.xsd" >
   <Page.actionBar>
-  	  <ActionBar title="{{ app_title }}">
-			<ActionBar.actionItems>
-        <ActionItem tap="newNote" ios.position="right" android.position="actionBar">
-          <ActionItem.actionView>
-            <Label class="btn_setting" text="" backgroundImage ="~/images/ic_settings.png" backgroundSize="cover" backgroundRepeat="no-repeat" tap="showSettingView"></Label>
-          </ActionItem.actionView>
-        </ActionItem>
-			</ActionBar.actionItems>
-		</ActionBar>
+  	  <ActionBar title="{{ app_title }}"></ActionBar>
 	</Page.actionBar>
     <ScrollView  class = "addform">
       <StackLayout class="p-4">

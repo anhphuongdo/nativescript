@@ -112,19 +112,18 @@ Label.img_describe{
   height: 10000px;
   background-color: rgb(42, 41, 41);
  }
-.picker{
-  background-color: blanchedalmond;
-  color: red;
-  border-color: brown;
-  border-radius: 20;
-  border-width: 2;
-  width: 300;
-  height: 100;
-  vertical-align: middle;
-}
+
 Button.btndelete{
   background-color: rgb(138, 14, 14);
 }
 Button.btnedit{
+  background-color: yellowgreen;
+}
+
+.ns-light .edit_btn{
+  background-color: black;
+  color: white;
+}
+.ns-dark .edit_btn{
   background-color: yellowgreen;
 }

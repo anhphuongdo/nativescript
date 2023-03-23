@@ -17,7 +17,6 @@ const title = page.getViewById('titleEdit');
    title.text = context.title_photo;
    description.text = context.description_photo;
    image.text = context.source_photo;
-   alert("chay thanh cong");
 }
 export function Editbtn(args){
     const button = args.object;
