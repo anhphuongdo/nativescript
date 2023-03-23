@@ -6,7 +6,6 @@
         <StackLayout orientation="vertical">
             <Label text="Dark mode" class="text-xl text-center dark_mode_label" textWrap="true"></Label>
             <Switch id="darkModeSwitch" checked="false" loaded="onSwitchChange"/>
-            <!-- <ListPicker items="{{ items }}" textField="name" valueField="role" selectedIndex="{{ index }}" selectedValue="{{ selectedItem }}" loaded="onListPickerLoaded" class="picker"/> -->
         </StackLayout>
     </ScrollView>
 </Page> 
