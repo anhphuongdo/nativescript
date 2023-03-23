@@ -18,7 +18,7 @@ Label{
   background-color: antiquewhite;
 }
 .addform button{
-  background-color: rgb(138, 14, 14);
+  background-color: rgb(138, 14, 14); 
   border-radius: 50px;
 }
 .btnadd{
@@ -39,7 +39,7 @@ ActionBar {
   width: 100px;
   height: 100px;
 }
-GridLayout.item {
+.ns-light .item {
   background-color: antiquewhite;
   padding: 20;
   margin: 20px;
@@ -47,9 +47,13 @@ GridLayout.item {
   width: 100%;
   height: auto;
 }
-
-Label.title{
+.ns-dark .item {
+  background-color: #000000;
+  padding: 20;
+  margin: 20px;
   font-size: 20px;
+  width: 100%;
+  height: auto;
 }
 
 .image{
@@ -57,11 +61,18 @@ Label.title{
   height: 400px;
 }
 
-TextView.news_detail_title{
+.ns-light .news_detail_title{
+  font-weight: bold;
+  color: rgb(15, 15, 80);
+  font-size: 30px;
+}
+.ns-dark .news_detail_title{
   font-weight: bold;
   color: yellow;
   font-size: 30px;
 } 
+
+
 TextView.news_description{
   font-size: 20px;
 }
@@ -69,27 +80,47 @@ Label.img_describe{
   font-size: 12px;
 }
 
-label.title{
+.ns-light .title{
   font-size: 20px;
   color: black;
 }
-Button.btn_add{
+
+.ns-dark .title{
+  font-size: 20px;
+  color: white;
+}
+
+.ns-light .btn_add{
   background-color: black;
+  color: white;
+}
+.ns-dark .btn_add{
+  background-color: black;
+  color: white;
 }
 /* .list-group-item{
   height: fit-content;
 } */
 
-.list-group{
+.ns-light .list-group{
   width: 100%;
   height: 10000px;
   background-color: antiquewhite;
  }
-
-.btn_save{
-  width: fit-content;
-  color: #fff;
-  height: 100px;
+.ns-dark .list-group{
+  width: 100%;
+  height: 10000px;
+  background-color: rgb(42, 41, 41);
+ }
+.picker{
+  background-color: blanchedalmond;
+  color: red;
+  border-color: brown;
+  border-radius: 20;
+  border-width: 2;
+  width: 300;
+  height: 100;
+  vertical-align: middle;
 }
 Button.btndelete{
   background-color: rgb(138, 14, 14);

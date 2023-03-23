@@ -1,12 +1,13 @@
 import { Observable, fromObject } from "@nativescript/core";
 const httpModule = require("@nativescript/core/http");
+const applicationSettings = require("@nativescript/core/application-settings");
 import { ObservableArray } from "@nativescript/core";
 import { load } from "@nativescript/core/ui/builder/index.js";
 import { addrangedata, addtada, getdata, getdatajson, getpush, loaddata, push } from './data.js';
+import { createViewModel } from "./setting-page.js";
 const dem = 0;
 export function onNavigatingTo(args){  
   const page = args.object;
- 
    getdatajson(page);
 }
 export function showInfoView(args) {
@@ -40,9 +41,12 @@ export function showDetailView(args) {
 };
 
 export function showSettingView(args) {
+  const isDarkMode = applicationSettings.getBoolean("isDarkMode", false);
   const navigationEntry = {
   moduleName: "setting-page",
-  context: {title: "Setting Page"}
+  context: {
+    isDarkMode : isDarkMode,
+    title: "Setting Page"}
   };
   frameModule.Frame.topmost().navigate(navigationEntry);
 };

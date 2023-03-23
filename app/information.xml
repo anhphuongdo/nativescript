@@ -12,13 +12,13 @@
 	</Page.actionBar>
     <ScrollView  class = "addform">
       <StackLayout class="p-4">
-              <Label text="Title:" style = "color:black;"/>
-              <TextField id="title" hint="Enter title here" style = "color:black;"/>
-              <Label text="Description:" style = "color:black;"/>
-              <TextField id="description" hint="Enter description here" />
-              <Label text="Image URL:" style = "color:black;"/>
-              <TextField id="image" hint="Enter image URL here" />
-              <Button text="Add" class="btnadd" tap="addnew" />        
+        <Label text="Title:" style = "color:black;"/>
+        <TextField id="title" hint="Enter title here" style = "color:black;"/>
+        <Label text="Description:" style = "color:black;"/>
+        <TextField id="description" hint="Enter description here" />
+        <Label text="Image URL:" style = "color:black;"/>
+        <TextField id="image" hint="Enter image URL here" />
+        <Button text="Add" class="btnadd" tap="addnew" style = "color:white;"/>        
       </StackLayout>
     </ScrollView>
   <!-- <StackLayout id="info-view" visibility="collapse">

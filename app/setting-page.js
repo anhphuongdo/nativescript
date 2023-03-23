@@ -1,73 +1,72 @@
+import { Color, getViewById } from "@nativescript/core";
+import { fromObject } from "@nativescript/core";
+
 export function onNavigatingToSetting(args){
     const page = args.object;
     const context = page.navigationContext;
         var newItem1 = {
+        isDarkMode : context.isDarkMode,
         title : context.title
-      }
+    }
+    const isDarkMode = applicationSettings.getBoolean("isDarkMode", false);
+    const mySwitch = page.getViewById("darkModeSwitch");
+    if(isDarkMode){
+        mySwitch.checked = true;
+    }else{
+        mySwitch.checked = false;
+    }
     page.bindingContext = newItem1;
+/*     const vm = fromObject({
+        items: [
+            { id: 1, name: "Ter Stegen", role: "Goalkeeper" },
+            { id: 3, name: "Piqué", role: "Defender" },
+            { id: 4, name: "I. Rakitic", role: "Midfielder" }
+        ],
+        index: 2,
+        selectedItem: ""
+    });
+    page.bindingContext = vm; */
+    //const isDarkMode = applicationSettings.getBoolean("isDarkMode", false);
+
   }
 
-
-
+/*   export function onListPickerLoaded(args) {
+    const listPicker = args.object;
+    listPicker.on("selectedIndexChange", (lpargs) => {
+        const picker = lpargs.object;
+        console.log(`ListPicker selected value: ${picker.selectedValue} ListPicker selected index: ${picker.selectedIndex}`);
+    });
+}
+  
+  function changeBackground(newBgColor) {
+    const page = frame.Frame.topmost().currentPage;
+    page.backgroundSpanUnderStatusBar = true;
+    page.background = new Color(newBgColor);
+  } */
   
 
-/* export function onDarkMode(args){
-    const switchMode = require("@nativescript/core/ui/switch");
-    const rootView = require("@nativescript/core/application").getRootView();
-    const page = args.object
-    switchMode = page.getViewById("switch");
-    if(switchMode.checked == true){
-        rootView.addCssClass("dark");
-    }else{
-        rootView.removeCssClass("dark");
-    }
-} */
-/* const textFieldModule = require("@nativescript/core/ui/text-field");
-const observableModule = require("@nativescript/core"); */
-/* export function onPageLoaded(args) {
+
+     
+
+    /* applicationSettings.setBoolean("isDarkMode", true); */
+
+
+const application = require("@nativescript/core/application");
+const applicationSettings = require("@nativescript/core/application-settings");
+
+export function onSwitchChange(args){
     const page = args.object;
-    const vm = new observableModule.Observable();
-    const stackLayout = page.getViewById("stackLayoutId");
-
-    vm.set("username", "john");
-    vm.set("tfResult", "");
-    vm.set("secureButton", "TextField secure:(OFF)");
-    vm.set("secure", false);
-    // changing TextField secure property value on button tap
-    vm.set("onTap", (btargs) => {
-        const secure = vm.get("secure");
-        vm.set("secure", !secure);
-        if (secure) {
-            vm.set("secureButton", "TextField secure:(OFF)");
-        } else {
-            vm.set("secureButton", "TextField secure:(ON)");
-        }
+    const mySwitch = page.getViewById("darkModeSwitch");
+        mySwitch.on("checkedChange", (args) => {
+            var isChecked = args.object.checked;
+            if (isChecked) {
+                applicationSettings.setBoolean("isDarkMode", true);
+                application.setCssFileName("./dark.css");
+            } else {
+                applicationSettings.setBoolean("isDarkMode", false);
+                application.setCssFileName("./app.css");
+            }
     });
-    // creating new TextField and binding the text property
-    const options = {
-        sourceProperty: "username",
-        targetProperty: "text"
-    };
-    const firstTextField = new textFieldModule.TextField();
-    firstTextField.updateTextTrigger = "textChanged";
-    firstTextField.bind(options, vm);
-    // registering for the TextField text change listener
-    firstTextField.on("textChange", (args) => {
-
-        vm.set("tfResult", args.object.text);
-    });
+}
 
 
-    // creating new TextField and binding the secure property
-    const secondOptions = {
-        sourceProperty: "secure",
-        targetProperty: "secure"
-    };
-    const secondTextField = new textFieldModule.TextField();
-    secondTextField.bind(secondOptions, vm);
-
-    stackLayout.addChild(firstTextField);
-    stackLayout.addChild(secondTextField);
-
-    page.bindingContext = vm;
-} */
